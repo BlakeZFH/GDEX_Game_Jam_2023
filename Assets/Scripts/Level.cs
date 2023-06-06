@@ -8,6 +8,8 @@ public class Level : MonoBehaviour
     int experience = 0;
     [SerializeField] ExperienceBar experienceBar;
 
+    [SerializeField] UpgradeMenuManager upgradeMenuManager;
+
     //Defines xp needed to level up
     int TO_LEVEL_UP
     {
@@ -38,9 +40,15 @@ public class Level : MonoBehaviour
         //Increases level by 1 if xp threshold is crossed
         if(experience >= TO_LEVEL_UP)
         {
-            experience -= TO_LEVEL_UP;
-            level += 1;
-            experienceBar.SetLevelText(level);
+            LevelUp();
         }
+    }
+
+    private void LevelUp()
+    {
+        upgradeMenuManager.OpenMenu();
+        experience -= TO_LEVEL_UP;
+        level += 1;
+        experienceBar.SetLevelText(level);
     }
 }

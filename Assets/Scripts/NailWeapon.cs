@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NailWeapon : MonoBehaviour
+public class NailWeapon : WeaponBase
 {
-    [SerializeField] float timeToAttack;
-    float timer;
-
     PlayerMovement playerMovement;
 
     [SerializeField] GameObject nailPrefab;
@@ -16,19 +13,7 @@ public class NailWeapon : MonoBehaviour
         playerMovement = GetComponentInParent<PlayerMovement>();
     }
 
-    private void Update()
-    {
-        if(timer < timeToAttack)
-        {
-            timer += Time.deltaTime;
-            return;
-        }
-
-        timer = 0;
-        SpawnNail();
-    }
-
-    private void SpawnNail()
+    public override void Attack()
     {
         GameObject nail = Instantiate(nailPrefab);
         nail.transform.position = transform.position;
