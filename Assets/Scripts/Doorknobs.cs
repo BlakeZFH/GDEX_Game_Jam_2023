@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Doorknobs : MonoBehaviour
 {
-    public int knobsAcquired;
+    [SerializeField] DataContainer data;
     [SerializeField] TMPro.TextMeshProUGUI doorknobsCountText;
 
     public void Add(int count)
     {
-        knobsAcquired += count;
-        doorknobsCountText.text = "Doorknobs: " + knobsAcquired.ToString();
+        data.doorknobs += count;
+        doorknobsCountText.text = "Doorknobs: " + data.doorknobs.ToString();
     }
 }

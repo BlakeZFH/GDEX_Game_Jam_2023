@@ -10,6 +10,22 @@ public class Level : MonoBehaviour
 
     [SerializeField] UpgradeMenuManager upgradeMenuManager;
 
+    [SerializeField] List<UpgradeData> upgrades;
+    List<UpgradeData> selectedUpgrades;
+    List<UpgradeData> acquiredUpgrades;
+
+    WeaponManager weaponManager;
+
+    private void Awake()
+    {
+        weaponManager = GetComponent<WeaponManager>();
+    }
+
+    internal void AddUpgradesIntoTheListOfAvailableUpgrades(List<UpgradeData> upgradesToAdd)
+    {
+        this.upgrades.AddRange(upgradesToAdd);
+    }
+
     //Defines xp needed to level up
     int TO_LEVEL_UP
     {
@@ -35,6 +51,33 @@ public class Level : MonoBehaviour
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
     }
 
+    public void Upgrade(int selectedUpgradeID)
+    {
+        UpgradeData upgradeData = selectedUpgrades[selectedUpgradeID];
+
+        if(acquiredUpgrades == null)
+        {
+            acquiredUpgrades = new List<UpgradeData>();
+        }
+
+        switch(upgradeData.upgradeType)
+        {
+            case UpgradeType.WeaponUpgrade:
+                weaponManager.UpgradeWeapon(upgradeData);
+                break;
+            case UpgradeType.ItemUpgrade:
+                break;
+            case UpgradeType.WeaponUnlock:
+                weaponManager.AddWeapon(upgradeData.weaponData);
+                break;
+            case UpgradeType.ItemUnlock:
+                break;
+        }
+
+        acquiredUpgrades.Add(upgradeData);
+        upgrades.Remove(upgradeData);
+    }
+
     public void CheckLevelUp()
     {
         //Increases level by 1 if xp threshold is crossed
@@ -46,9 +89,29 @@ public class Level : MonoBehaviour
 
     private void LevelUp()
     {
-        upgradeMenuManager.OpenMenu();
+        if (selectedUpgrades == null) { selectedUpgrades = new List<UpgradeData>(); }
+        selectedUpgrades.AddRange(GetUpgrade(4));
+
+        upgradeMenuManager.OpenMenu(selectedUpgrades);
         experience -= TO_LEVEL_UP;
         level += 1;
         experienceBar.SetLevelText(level);
+    }
+
+    public List<UpgradeData> GetUpgrade(int count)
+    {
+        List<UpgradeData> upgradeList = new List<UpgradeData>();
+
+        if(count > upgradeList.Count)
+        {
+            count = upgrades.Count;
+        }
+
+        for(int i = 0; i < count; i++)
+        {
+            upgradeList.Add(upgrades[Random.Range(0, upgrades.Count)]);
+        }
+
+        return upgradeList;
     }
 }

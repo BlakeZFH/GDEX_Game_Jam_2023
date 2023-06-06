@@ -10,6 +10,9 @@ public class Character : MonoBehaviour
 
     public int armor = 0;
 
+    public float hpRegenerationRate = 1f;
+    public float hpRegenerationTimer;
+
     [HideInInspector] public Level level;
     [HideInInspector] public Doorknobs doorknobs;
 
@@ -25,6 +28,17 @@ public class Character : MonoBehaviour
     {
         //Sets healthbar fill at start of level
         hpBar.SetState(currentHp, maxHp);
+    }
+
+    private void Update()
+    {
+        hpRegenerationTimer += Time.deltaTime * hpRegenerationRate;
+
+        if(hpRegenerationTimer > 1f)
+        {
+            Heal(1);
+            hpRegenerationTimer -= 1f;
+        }
     }
 
     public void TakeDamage(int damage)

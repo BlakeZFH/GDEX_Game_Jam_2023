@@ -6,9 +6,11 @@ public class NailProjectile : MonoBehaviour
 {
     Vector3 direction;
     [SerializeField] float speed;
-    [SerializeField] int damage = 1;
+    public int damage = 1;
 
     bool hitDetected = false;
+
+    float ttl = 6f;
 
     public void SetDirection(float dir_x, float dir_y)
     {
@@ -49,6 +51,12 @@ public class NailProjectile : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        }
+
+        ttl -= Time.deltaTime;
+        if(ttl < 0f)
+        {
+            Destroy(gameObject);
         }
     }
 }
