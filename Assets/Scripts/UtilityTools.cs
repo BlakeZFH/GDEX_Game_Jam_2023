@@ -21,6 +21,7 @@ public class UtilityTools
             position.y = UnityEngine.Random.Range(-spawnArea.y, spawnArea.y);
             position.x = spawnArea.x * f;
         }
+
         position.z = 0;
 
         return position;

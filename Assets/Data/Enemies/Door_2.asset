@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Door_2
   m_EditorClassIdentifier: 
   Name: Door_2
-  animatedPrefab: {fileID: 2560341869370241338, guid: 144313714784ea14a815311ede7e3676, type: 3}
+  animatedPrefab: {fileID: 1398991323740303328, guid: e279720a139729f49be7a331707175f2, type: 3}
   stats:
     hp: 10
     damage: 5

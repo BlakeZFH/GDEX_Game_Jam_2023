@@ -56,8 +56,8 @@ public class Enemy : MonoBehaviour, IDamagable
     private void FixedUpdate()
     {
         //Moves enemy toward player
-        //Vector3 direction = (targetDestination.position - transform.position).normalized;
-       // rb.velocity = direction * stats.moveSpeed;
+        Vector3 direction = (targetDestination.position - transform.position).normalized;
+        rb.velocity = direction * stats.moveSpeed;
     }
 
     internal void SetStats(EnemyStats stats)

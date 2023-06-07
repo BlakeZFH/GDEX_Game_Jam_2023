@@ -116,8 +116,9 @@ public class Level : MonoBehaviour
             count = upgrades.Count;
         }
 
-        for(int i = 0; i < count; i++)
+        for(int i = 1; i < count; i++)
         {
+            Debug.Log(upgrades.Count);
             upgradeList.Add(upgrades[Random.Range(0, upgrades.Count)]);
         }
 

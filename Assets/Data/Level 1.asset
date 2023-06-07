@@ -20,25 +20,13 @@ MonoBehaviour:
     objectToSpawn: {fileID: 0}
     count: 10
   - eventType: 0
-    time: 30
+    time: 15
     message: Wave 2
     enemyToSpawn: {fileID: 11400000, guid: 954351c56ed52c04da010041cc78a750, type: 2}
     objectToSpawn: {fileID: 0}
     count: 10
-  - eventType: 0
-    time: 45
-    message: Wave 3
-    enemyToSpawn: {fileID: 11400000, guid: 954351c56ed52c04da010041cc78a750, type: 2}
-    objectToSpawn: {fileID: 0}
-    count: 15
-  - eventType: 1
-    time: 20
-    message: Woo!
-    enemyToSpawn: {fileID: 0}
-    objectToSpawn: {fileID: 5026035269260662545, guid: e1ae7c59cb85d664691cb723b5aee190, type: 3}
-    count: 15
   - eventType: 2
-    time: 2
+    time: 60
     message: You won!
     enemyToSpawn: {fileID: 0}
     objectToSpawn: {fileID: 0}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1217688746789667310}
   - component: {fileID: 7787226558599850640}
   m_Layer: 0
-  m_Name: Door_2
+  m_Name: DNU Door_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
