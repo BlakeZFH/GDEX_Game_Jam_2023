@@ -39,9 +39,10 @@ public class NailProjectile : MonoBehaviour
             //Iterate through collision, destroy object and deal damage if collision object has enemy script
             foreach (Collider2D c in hit)
             {
-                Enemy enemy = c.GetComponent<Enemy>();
+                IDamagable enemy = c.GetComponent<IDamagable>();
                 if (enemy != null)
                 {
+                    PostDamage(damage, transform.position);
                     enemy.TakeDamage(damage);
                     hitDetected = true;
                     break;
@@ -58,5 +59,10 @@ public class NailProjectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void PostDamage(int damage, Vector3 worldPosition)
+    {
+        MessageSystem.instance.PostMessage(damage.ToString(), worldPosition);
     }
 }

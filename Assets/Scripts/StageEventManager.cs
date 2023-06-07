@@ -9,10 +9,16 @@ public class StageEventManager : MonoBehaviour
 
     StageTime stageTime;
     int eventIndexer;
+    PlayerWinManager playerWinManager;
 
     private void Awake()
     {
         stageTime = GetComponent<StageTime>();
+    }
+
+    private void Start()
+    {
+        playerWinManager = FindAnyObjectByType<PlayerWinManager>();
     }
 
     private void Update()
@@ -21,13 +27,47 @@ public class StageEventManager : MonoBehaviour
 
         if(stageTime.time > stageData.stageEvents[eventIndexer].time)
         {
-            for(int i = 0; i < stageData.stageEvents[eventIndexer].count; i++)
+            switch(stageData.stageEvents[eventIndexer].eventType)
             {
-                enemiesManager.SpawnEnemy();
+                case StageEventType.spawnEnemy:
+                    for (int i = 0; i < stageData.stageEvents[eventIndexer].count; i++)
+                    {
+                        SpawnEnemy();
+                    }
+                    break;
+                case StageEventType.spawnObject:
+                    for(int i = 0; i < stageData.stageEvents[eventIndexer].count; i++)
+                    {
+                        SpawnObject();
+                    }
+                    break;
+                case StageEventType.winStage:
+                    WinStage();
+                    break;
             }
-
             eventIndexer += 1;
         }
+    }
+
+    private void WinStage()
+    {
+        playerWinManager.Win();
+    }
+
+    private void SpawnObject()
+    {
+        Vector3 positionToSpawn = GameManager.instance.playerTransform.position;
+        positionToSpawn += UtilityTools.GenerateRandomPositionSquarePattern(new Vector2(5f, 5f));
+
+        SpawnManager.instance.SpawnObject(
+             positionToSpawn,
+             stageData.stageEvents[eventIndexer].objectToSpawn
+             );
+    }    
+
+    private void SpawnEnemy()
+    {
+        enemiesManager.SpawnEnemy(stageData.stageEvents[eventIndexer].enemyToSpawn);
     }
 
 }

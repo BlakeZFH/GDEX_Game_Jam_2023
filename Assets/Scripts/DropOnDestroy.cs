@@ -19,12 +19,23 @@ public class DropOnDestroy : MonoBehaviour
         //Does not drop object if parent is destoryed via quitting
         if (isQuitting) { return; }
 
+        if(dropItemPrefab.Count <= 0)
+        {
+            Debug.LogWarning("List of drop items is empty");
+        }
+
         //Drops object on parent destroy
         if(Random.value < chance)
         {
             GameObject toDrop = dropItemPrefab[Random.Range(0, dropItemPrefab.Count)];
-            Transform t = Instantiate(toDrop).transform;
-            t.position = transform.position;
+
+            if(toDrop == null)
+            {
+                Debug.LogWarning("DropOnDestroy, reference to dropped item is null -- check the prefab object which drops items on destroy");
+                return;
+            }
+
+            SpawnManager.instance.SpawnObject(transform.position, toDrop);
         }
     }
 }

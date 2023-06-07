@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b2851a1cdd3f0c44adcdc7f4e37b282, type: 3}
-  m_Name: Whip Upgrade (Double Strike)
+  m_Name: ArmorUpgrade
   m_EditorClassIdentifier: 
-  upgradeType: 0
-  Name: Double Strike
+  upgradeType: 1
+  Name: 
   icon: {fileID: 21300000, guid: a8166ea434d337349818825bff42d2f6, type: 3}
-  weaponData: {fileID: 11400000, guid: 03ee4bef875ef49488e138b990ff9eff, type: 2}
+  weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0
     timeToAttack: 0
-    numberOfAttacks: 2
-  item: {fileID: 0}
+    numberOfAttacks: 0
+  item: {fileID: 11400000, guid: 0539c5d52e910d649afbb3cfcae1e578, type: 2}
   itemStats:
-    armor: 0
+    armor: 10

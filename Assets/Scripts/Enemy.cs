@@ -1,19 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
+[Serializable]
+public class EnemyStats
+{
+    public int hp = 4;
+    public int damage = 1;
+    public int experience_reward = 400;
+    public float moveSpeed = 1f;
+
+    public EnemyStats(EnemyStats stats)
+    {
+        this.hp = stats.hp;
+        this.damage = stats.damage;
+        this.experience_reward = stats.experience_reward;
+        this.moveSpeed = stats.moveSpeed;
+    }
+
+    internal void ApplyProgress(float progress)
+    {
+        this.hp = (int)(hp * progress);
+        this.damage = (int)(damage * progress);
+    }
+}
 
 public class Enemy : MonoBehaviour, IDamagable
 {
     Transform targetDestination;
     GameObject targetGameObject;
     Character targetCharacter;
-    [SerializeField] float speed;
 
     Rigidbody2D rb;
 
-    [SerializeField] int hp = 4;
-    [SerializeField] int damage = 1;
-    [SerializeField] int experience_reward = 400;
+    public EnemyStats stats;
 
     private void Awake()
     {
@@ -27,12 +48,22 @@ public class Enemy : MonoBehaviour, IDamagable
         targetDestination = target.transform;
     }
 
+    internal void UpgradeStatsForProgress(float progress)
+    {
+        stats.ApplyProgress(progress);
+    }
+
     private void FixedUpdate()
     {
         //Moves enemy toward player
-        Vector3 direction = (targetDestination.position - transform.position).normalized;
-        rb.velocity = direction * speed;
+        //Vector3 direction = (targetDestination.position - transform.position).normalized;
+       // rb.velocity = direction * stats.moveSpeed;
     }
+
+    internal void SetStats(EnemyStats stats)
+    {
+        this.stats = new EnemyStats(stats);
+    }    
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -49,16 +80,16 @@ public class Enemy : MonoBehaviour, IDamagable
             targetCharacter = targetGameObject.GetComponent<Character>();
         }
 
-        targetCharacter.TakeDamage(damage);
+        targetCharacter.TakeDamage(stats.damage);
     }
 
     public void TakeDamage(int damage)
     {
-        hp -= damage;
+        stats.hp -= damage;
 
-        if(hp <= 0)
+        if(stats.hp <= 0)
         {
-            targetGameObject.GetComponent<Level>().AddExperience(experience_reward);
+            targetGameObject.GetComponent<Level>().AddExperience(stats.experience_reward);
             GetComponent<DropOnDestroy>().CheckDrop();
             Destroy(gameObject);
         }

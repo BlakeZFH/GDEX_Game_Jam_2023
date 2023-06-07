@@ -6,4 +6,11 @@ using UnityEngine;
 public class DataContainer : ScriptableObject
 {
     public int doorknobs;
+
+    public List<bool> stageCompletion;
+
+    public void StageComplete(int i)
+    {
+        stageCompletion[i] = true;
+    }
 }
