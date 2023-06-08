@@ -19,21 +19,33 @@ MonoBehaviour:
     enemyToSpawn: {fileID: 11400000, guid: 38da8132f57223342b7eaaa6b4e43824, type: 2}
     objectToSpawn: {fileID: 0}
     count: 10
+    isRepeatedEvent: 0
+    repeatEverySeconds: 0
+    repeatCount: 0
   - eventType: 0
     time: 15
     message: Wave 2
     enemyToSpawn: {fileID: 11400000, guid: 954351c56ed52c04da010041cc78a750, type: 2}
     objectToSpawn: {fileID: 0}
     count: 10
+    isRepeatedEvent: 0
+    repeatEverySeconds: 0
+    repeatCount: 0
   - eventType: 3
-    time: 25
+    time: 20
     message: BOSS
-    enemyToSpawn: {fileID: 0}
+    enemyToSpawn: {fileID: 11400000, guid: 38da8132f57223342b7eaaa6b4e43824, type: 2}
     objectToSpawn: {fileID: 0}
     count: 1
+    isRepeatedEvent: 0
+    repeatEverySeconds: 0
+    repeatCount: 0
   - eventType: 2
     time: 60
     message: You won!
     enemyToSpawn: {fileID: 0}
     objectToSpawn: {fileID: 0}
     count: 0
+    isRepeatedEvent: 0
+    repeatEverySeconds: 0
+    repeatCount: 0

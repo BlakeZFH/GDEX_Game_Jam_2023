@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NailProjectile : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
+    WeaponBase weapon;
+
     public float attackArea = 0.7f;
     Vector3 direction;
-    [SerializeField] float speed;
-    public int damage = 1;
-    public int numOfHits = 1;
+    float speed;
+    int damage = 1;
+    int numOfHits = 1;
 
     List<IDamagable> enemiesHit;
 
@@ -59,9 +61,8 @@ public class NailProjectile : MonoBehaviour
                 {
                     if (CheckRepeatHit(enemy) == false)
                     {
-                        PostDamage(damage, transform.position);
+                        weapon.ApplyDamage(c.transform.position, damage, enemy);
                         enemiesHit.Add(enemy);
-                        enemy.TakeDamage(damage);
                         numOfHits -= 1;
                     }
                 }
@@ -95,5 +96,13 @@ public class NailProjectile : MonoBehaviour
     public void PostDamage(int damage, Vector3 worldPosition)
     {
         MessageSystem.instance.PostMessage(damage.ToString(), worldPosition);
+    }
+
+    public void SetStats(WeaponBase weaponBase)
+    {
+        weapon = weaponBase;
+        speed = weaponBase.weaponStats.projectileSpeed;
+        damage = weaponBase.GetDamage();
+        numOfHits = weaponBase.weaponStats.numberOfHits;
     }
 }

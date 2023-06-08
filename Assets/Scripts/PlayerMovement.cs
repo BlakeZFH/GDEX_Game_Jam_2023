@@ -10,9 +10,14 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public Vector3 movement;
     [HideInInspector]
-    public float lastHorizontalVector;
+    public float lastHorizontalDeCoupledVector;
     [HideInInspector]
-    public float lastVerticalVector;
+    public float lastVerticalDeCoupledVector;
+
+    [HideInInspector]
+    public float lastHorizontalCoupledVector;
+    [HideInInspector]
+    public float lastVerticalCoupledVector;
 
     [SerializeField] float speed = 3f;
 
@@ -27,8 +32,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        lastHorizontalVector = -1f;
-        lastVerticalVector = -1f;
+        lastHorizontalDeCoupledVector = -1f;
+        lastVerticalDeCoupledVector = 1f;
+
+        lastHorizontalCoupledVector = -1f;
+        lastVerticalCoupledVector = -1f;
     }
 
     void Update()
@@ -36,13 +44,19 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        if(movement.x != 0 || movement.y != 0)
+        {
+            lastHorizontalCoupledVector = movement.x;
+            lastVerticalCoupledVector = movement.y;
+        }
+
         if (movement.x != 0)
         {
-            lastHorizontalVector = movement.x;
+            lastHorizontalDeCoupledVector = movement.x;
         }
         if(movement.y != 0)
         {
-            lastVerticalVector = movement.y;
+            lastVerticalDeCoupledVector = movement.y;
         }
 
         animate.horizontal = movement.x;

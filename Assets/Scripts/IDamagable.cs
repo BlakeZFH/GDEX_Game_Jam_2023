@@ -4,5 +4,9 @@ using UnityEngine;
 
 public interface IDamagable
 {
-    public void TakeDamage(int dmaage);
+    void Stun(float stun);
+
+    public void Knockback(Vector3 vector, float force, float timeWeight);
+
+    public void TakeDamage(int damage);
 }

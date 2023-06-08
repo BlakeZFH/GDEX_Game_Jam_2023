@@ -5,18 +5,27 @@ using UnityEngine;
 public class UpgradeMenuManager : MonoBehaviour
 {
     [SerializeField] GameObject panel;
+    [SerializeField] UpgradeDescriptionPanel upgradeDescriptions;
     PauseManager pauseManager;
 
+    Level characterLevel;
+
     [SerializeField] List<UpgradeButton> upgradeButtons;
+
+    int selectedUpgradeID;
+
+    List<UpgradeData> upgradeData;
 
     private void Awake()
     {
         pauseManager = GetComponent<PauseManager>();
+        characterLevel = GameManager.instance.playerTransform.GetComponent<Level>();
     }
 
     private void Start()
     {
         HideButtons();
+        selectedUpgradeID = -1;
     }
 
     public void OpenMenu(List<UpgradeData> upgradeDatas)
@@ -24,6 +33,8 @@ public class UpgradeMenuManager : MonoBehaviour
         Clean();
         pauseManager.PauseGame();
         panel.SetActive(true);
+
+        this.upgradeData = upgradeDatas;
 
         for (int i = 0; i < upgradeDatas.Count; i++)
         {
@@ -42,12 +53,34 @@ public class UpgradeMenuManager : MonoBehaviour
 
     public void Upgrade(int pressedButtonID)
     {
-        GameManager.instance.playerTransform.GetComponent<Level>().Upgrade(pressedButtonID);
-        CloseMenu();
+        if (selectedUpgradeID != pressedButtonID) 
+        {
+            selectedUpgradeID = pressedButtonID;
+            ShowDescription();
+        }
+        else
+        {
+            characterLevel.Upgrade(pressedButtonID);
+            CloseMenu();
+            HideDescription();
+        }
+    }
+
+    private void HideDescription()
+    {
+        upgradeDescriptions.gameObject.SetActive(false);
+    }
+
+    private void ShowDescription()
+    {
+        upgradeDescriptions.gameObject.SetActive(true);
+        upgradeDescriptions.Set(upgradeData[selectedUpgradeID]);
     }
 
     public void CloseMenu()
     {
+        selectedUpgradeID = -1;
+
         HideButtons();
 
         pauseManager.UnPauseGame();

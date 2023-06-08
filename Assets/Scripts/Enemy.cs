@@ -36,6 +36,12 @@ public class Enemy : MonoBehaviour, IDamagable
 
     public EnemyStats stats;
 
+    Vector3 knockbackVector;
+    float knockbackForce;
+    float knockbackTimeWeight;
+
+    float stunned;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -55,9 +61,37 @@ public class Enemy : MonoBehaviour, IDamagable
 
     private void FixedUpdate()
     {
+        ProcessStun();
+        Move();
+    }
+
+    private void ProcessStun()
+    {
+        if(stunned > 0f)
+        {
+            stunned -= Time.fixedDeltaTime;
+        }
+    }
+
+    private void Move()
+    {
         //Moves enemy toward player
         Vector3 direction = (targetDestination.position - transform.position).normalized;
-        rb.velocity = direction * stats.moveSpeed;
+        rb.velocity = CalculateMovementVelocity(direction) + CalculateKnockback();
+    }
+
+    private Vector3 CalculateMovementVelocity(Vector3 direction)
+    {
+        return direction * stats.moveSpeed * (stunned > 0f ? 0f : 1f);
+    }
+
+    private Vector3 CalculateKnockback()
+    {
+        if(knockbackTimeWeight > 0f)
+        {
+            knockbackTimeWeight -= Time.fixedDeltaTime;
+        }
+        return knockbackVector * knockbackForce * (knockbackTimeWeight > 0f ? 1f : 0f);
     }
 
     internal void SetStats(EnemyStats stats)
@@ -93,5 +127,17 @@ public class Enemy : MonoBehaviour, IDamagable
             GetComponent<DropOnDestroy>().CheckDrop();
             Destroy(gameObject);
         }
+    }
+
+    public void Stun(float stun)
+    {
+        stunned = stun;
+    }
+
+    public void Knockback(Vector3 vector, float force, float timeWeight)
+    {
+        knockbackVector = vector;
+        knockbackForce = force;
+        knockbackTimeWeight = timeWeight;
     }
 }

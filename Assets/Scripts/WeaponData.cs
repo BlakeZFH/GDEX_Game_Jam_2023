@@ -9,12 +9,22 @@ public class WeaponStats
     public int damage;
     public float timeToAttack;
     public int numberOfAttacks;
+    public float knockBack;
+    public int numberOfHits;
+    public float projectileSpeed;
+    public float stun;
+    public float knockbackTimeWeight;
 
-    public WeaponStats(int damage, float timeToAttack, int numOfAttacks)
+    public WeaponStats(WeaponStats stats)
     {
-        this.damage = damage;
-        this.timeToAttack = timeToAttack;
-        this.numberOfAttacks = numOfAttacks;
+        this.damage = stats.damage;
+        this.timeToAttack = stats.timeToAttack;
+        this.numberOfAttacks = stats.numberOfAttacks;
+        this.knockBack = stats.knockBack;
+        this.numberOfHits = stats.numberOfHits;
+        this.projectileSpeed = stats.projectileSpeed;
+        this.stun = stats.stun;
+        this.knockbackTimeWeight = stats.knockbackTimeWeight;
     }
 
     internal void Sum(WeaponStats weaponUpgradeStats)
@@ -22,6 +32,11 @@ public class WeaponStats
         this.damage += weaponUpgradeStats.damage;
         this.timeToAttack += weaponUpgradeStats.timeToAttack;
         this.numberOfAttacks += weaponUpgradeStats.numberOfAttacks;
+        this.knockBack += weaponUpgradeStats.knockBack;
+        this.numberOfHits += weaponUpgradeStats.numberOfHits;
+        this.projectileSpeed += weaponUpgradeStats.projectileSpeed;
+        this.stun += weaponUpgradeStats.stun;
+        this.knockbackTimeWeight += weaponUpgradeStats.knockbackTimeWeight;
     }
 }
 
