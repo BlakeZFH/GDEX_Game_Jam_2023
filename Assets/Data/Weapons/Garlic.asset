@@ -9,15 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5962e4d7f2e88fe44880db13490e760e, type: 3}
-  m_Name: Data Container
+  m_Script: {fileID: 11500000, guid: 4d10634e204e6ef4f9c730471b9b848e, type: 3}
+  m_Name: Garlic
   m_EditorClassIdentifier: 
-  doorknobs: 1000
-  stageCompletion: 00
-  upgrades:
-  - persistantUpgrades: 0
-    level: 0
-    costToUpgrade: 100
-  - persistantUpgrades: 1
-    level: 0
-    costToUpgrade: 100
+  Name: Garlic
+  stats:
+    damage: 1
+    timeToAttack: 1
+    numberOfAttacks: 1
+  weaponBasePrefab: {fileID: 564315334022614931, guid: a4b3202481c1f7046b2c9577e775d316, type: 3}
+  upgrades: []

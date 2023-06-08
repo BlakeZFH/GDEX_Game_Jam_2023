@@ -25,6 +25,12 @@ MonoBehaviour:
     enemyToSpawn: {fileID: 11400000, guid: 954351c56ed52c04da010041cc78a750, type: 2}
     objectToSpawn: {fileID: 0}
     count: 10
+  - eventType: 3
+    time: 25
+    message: BOSS
+    enemyToSpawn: {fileID: 0}
+    objectToSpawn: {fileID: 0}
+    count: 1
   - eventType: 2
     time: 60
     message: You won!
