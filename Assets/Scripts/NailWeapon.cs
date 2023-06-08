@@ -31,7 +31,7 @@ public class NailWeapon : WeaponBase
 
             NailProjectile nailProjectile = nail.GetComponent<NailProjectile>();
             nailProjectile.GetComponent<NailProjectile>().SetDirection(playerMovement.lastHorizontalVector, 0f);
-            nailProjectile.damage = weaponStats.damage;
+            nailProjectile.damage = GetDamage();
         }
     }
 }

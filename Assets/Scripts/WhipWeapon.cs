@@ -15,19 +15,6 @@ public class WhipWeapon : WeaponBase
         playerMovement = GetComponentInParent<PlayerMovement>();
     }
 
-    private void ApplyDamage(Collider2D[] colliders)
-    {
-        for(int i = 0; i < colliders.Length; i++)
-        {
-            IDamagable e = colliders[i].GetComponent<IDamagable>();
-            if(e != null)
-            {
-                PostDamage(weaponStats.damage, colliders[i].transform.position);
-                e.TakeDamage(weaponStats.damage);
-            }
-        }
-    }
-
     public override void Attack()
     {
         StartCoroutine(AttackProcess());

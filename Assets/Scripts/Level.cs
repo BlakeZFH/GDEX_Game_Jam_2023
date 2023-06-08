@@ -99,6 +99,7 @@ public class Level : MonoBehaviour
     private void LevelUp()
     {
         if (selectedUpgrades == null) { selectedUpgrades = new List<UpgradeData>(); }
+        selectedUpgrades.Clear();
         selectedUpgrades.AddRange(GetUpgrade(4));
 
         upgradeMenuManager.OpenMenu(selectedUpgrades);
@@ -107,18 +108,28 @@ public class Level : MonoBehaviour
         experienceBar.SetLevelText(level);
     }
 
+    public void ShuffleUpgrades()
+    {
+        for(int i = upgrades.Count - 1; i > 0; i--)
+        {
+            int x = Random.Range(0, i + 1);
+            UpgradeData shuffleElement = upgrades[i];
+            upgrades[x] = shuffleElement;
+        }
+    }
     public List<UpgradeData> GetUpgrade(int count)
     {
+        ShuffleUpgrades();
         List<UpgradeData> upgradeList = new List<UpgradeData>();
 
-        if(count > upgradeList.Count)
+        if(count > upgrades.Count)
         {
             count = upgrades.Count;
         }
 
         for(int i = 0; i < count; i++)
         {
-            upgradeList.Add(upgrades[Random.Range(0, upgrades.Count)]);
+            upgradeList.Add(upgrades[i]);
         }
 
         return upgradeList;

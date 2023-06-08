@@ -7,7 +7,8 @@ public enum StageEventType
 {
     spawnEnemy,
     spawnObject,
-    winStage
+    winStage,
+    spawnEnemyBoss
 }
 
 [Serializable]
@@ -15,11 +16,17 @@ public enum StageEventType
 public class StageEvent
 {
     public StageEventType eventType;
+
     public float time;
     public string message;
+
     public EnemyData enemyToSpawn;
     public GameObject objectToSpawn;
     public int count;
+
+    public bool isRepeatedEvent;
+    public float repeatEverySeconds;
+    public int repeatCount;
 }
 
 [CreateAssetMenu]
