@@ -32,6 +32,8 @@ public class Character : MonoBehaviour
     {
         ApplyPersistantUpgrades();
 
+        currentHp = maxHp;
+
         //Sets healthbar fill at start of level
         hpBar.SetState(currentHp, maxHp);
     }

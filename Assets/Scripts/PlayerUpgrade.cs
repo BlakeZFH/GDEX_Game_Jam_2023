@@ -34,8 +34,8 @@ public class PlayerUpgrade : MonoBehaviour
     {
         PlayerUpgrades playerUpgrade = dataContainer.upgrades[(int)upgrade];
 
-        upgradeName.text = upgrade.ToString();
-        level.text = playerUpgrade.level.ToString();
-        price.text = playerUpgrade.costToUpgrade.ToString();
+        upgradeName.text = upgrade.ToString() + "+";
+        level.text = "LVL: " + playerUpgrade.level.ToString();
+        price.text = "Cost: $" + playerUpgrade.costToUpgrade.ToString();
     }
 }

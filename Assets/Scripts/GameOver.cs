@@ -6,10 +6,10 @@ public class GameOver : MonoBehaviour
 {
     public GameObject gameOverPanel;
     [SerializeField] GameObject weaponParent;
+    PauseManager pauseManager;
 
     public void PlayerGameOver()
     {
-        Debug.Log("Game Over");
         GetComponent<PlayerMovement>().enabled = false;
         gameOverPanel.SetActive(true);
         weaponParent.SetActive(false);

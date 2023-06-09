@@ -82,6 +82,7 @@ public class UpgradeMenuManager : MonoBehaviour
         selectedUpgradeID = -1;
 
         HideButtons();
+        HideDescription();
 
         pauseManager.UnPauseGame();
         panel.SetActive(false);

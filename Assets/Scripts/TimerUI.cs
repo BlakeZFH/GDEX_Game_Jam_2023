@@ -6,6 +6,7 @@ using TMPro;
 public class TimerUI : MonoBehaviour
 {
     TextMeshProUGUI text;
+    GameOver gameOver;
 
     private void Awake()
     {
@@ -14,9 +15,9 @@ public class TimerUI : MonoBehaviour
 
     public void UpdateTime(float time)
     {
-        int minutes = (int)(time / 60f);
-        int seconds = (int)(time % 60f);
+            int minutes = (int)(time / 60f);
+            int seconds = (int)(time % 60f);
 
-        text.text = minutes.ToString() + ":" + seconds.ToString("00");
+            text.text = minutes.ToString() + ":" + seconds.ToString("00");
     }
 }

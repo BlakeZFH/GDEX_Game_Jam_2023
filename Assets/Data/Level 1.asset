@@ -19,9 +19,9 @@ MonoBehaviour:
     enemyToSpawn: {fileID: 11400000, guid: 38da8132f57223342b7eaaa6b4e43824, type: 2}
     objectToSpawn: {fileID: 0}
     count: 10
-    isRepeatedEvent: 0
-    repeatEverySeconds: 0
-    repeatCount: 0
+    isRepeatedEvent: 1
+    repeatEverySeconds: 10
+    repeatCount: 10
   - eventType: 0
     time: 15
     message: Wave 2

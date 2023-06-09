@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5962e4d7f2e88fe44880db13490e760e, type: 3}
   m_Name: Data Container
   m_EditorClassIdentifier: 
-  doorknobs: 1000
+  doorknobs: 0
   stageCompletion: 00
   upgrades:
   - persistantUpgrades: 0
     level: 0
+    max_level: 10
     costToUpgrade: 100
   - persistantUpgrades: 1
     level: 0
+    max_level: 10
     costToUpgrade: 100
