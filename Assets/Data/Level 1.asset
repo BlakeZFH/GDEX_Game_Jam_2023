@@ -32,9 +32,9 @@ MonoBehaviour:
     repeatEverySeconds: 0
     repeatCount: 0
   - eventType: 3
-    time: 20
+    time: 15
     message: BOSS
-    enemyToSpawn: {fileID: 11400000, guid: 38da8132f57223342b7eaaa6b4e43824, type: 2}
+    enemyToSpawn: {fileID: 11400000, guid: 5714a7269a066a044a099e67112e842a, type: 2}
     objectToSpawn: {fileID: 0}
     count: 1
     isRepeatedEvent: 0

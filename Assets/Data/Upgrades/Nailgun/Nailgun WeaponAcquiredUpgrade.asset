@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 2
   Name: Nailgun
-  description: Nail weapon
-  icon: {fileID: 1630578511, guid: fd10cc92738a34b4aa5ff6ade38fca41, type: 3}
+  description: A weapon that shoots nails
+  icon: {fileID: 21300000, guid: c441f8046a5eabf4489696adb30a019b, type: 3}
   weaponData: {fileID: 11400000, guid: 8d1bb68db0cc0634d94a5958bfcd7b9a, type: 2}
   weaponUpgradeStats:
     damage: 0

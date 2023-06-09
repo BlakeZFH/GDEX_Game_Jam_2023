@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeType: 3
   Name: Armor
   description: New armor
-  icon: {fileID: 21300000, guid: a8166ea434d337349818825bff42d2f6, type: 3}
+  icon: {fileID: 1630578511, guid: fd10cc92738a34b4aa5ff6ade38fca41, type: 3}
   weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0

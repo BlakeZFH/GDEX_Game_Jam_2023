@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: Nailgun (Stun)
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: Stun
-  description: Stun enemies
-  icon: {fileID: -1797404978, guid: ae4f848c86bfa0a468a6c4c78a11769e, type: 3}
+  Name: 'Nailgun: Stun'
+  description: Stuns enemies for a short amount of time
+  icon: {fileID: 21300000, guid: c441f8046a5eabf4489696adb30a019b, type: 3}
   weaponData: {fileID: 11400000, guid: 8d1bb68db0cc0634d94a5958bfcd7b9a, type: 2}
   weaponUpgradeStats:
-    damage: 100
+    damage: 0
     timeToAttack: 0
     numberOfAttacks: 0
     knockBack: 0
     numberOfHits: 0
     projectileSpeed: 0
-    stun: 0
+    stun: 1
     knockbackTimeWeight: 0
   item: {fileID: 0}
   itemStats:

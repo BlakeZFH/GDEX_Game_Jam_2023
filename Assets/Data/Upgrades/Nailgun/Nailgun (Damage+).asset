@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Nailgun (Damage+)
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: Damage+
-  description: More nail damage
-  icon: {fileID: -1797404978, guid: ae4f848c86bfa0a468a6c4c78a11769e, type: 3}
+  Name: 'Nailgun: Damage+'
+  description: Increases nail damage by 200
+  icon: {fileID: 21300000, guid: c441f8046a5eabf4489696adb30a019b, type: 3}
   weaponData: {fileID: 11400000, guid: 8d1bb68db0cc0634d94a5958bfcd7b9a, type: 2}
   weaponUpgradeStats:
     damage: 200
