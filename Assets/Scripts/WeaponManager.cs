@@ -28,10 +28,13 @@ public class WeaponManager : MonoBehaviour
         GameObject weaponGameObject = Instantiate(weaponData.weaponBasePrefab, weaponObjectsContainer);
 
         WeaponBase weaponBase = weaponGameObject.GetComponent<WeaponBase>();
+
+        weaponBase.SetData(weaponData);
         weapons.Add(weaponBase);
         weaponBase.AddOwnerCharacter(character);
 
         weaponGameObject.GetComponent<WeaponBase>().SetData(weaponData);
+
         Level level = GetComponent<Level>();
         if(level != null)
         {

@@ -12,7 +12,7 @@ public enum DirectionOfAttack
 
 public abstract class WeaponBase : MonoBehaviour
 {
-    PlayerMovement playerMovement;
+    public PlayerMovement playerMovement;
 
     public WeaponData weaponData;
 
@@ -104,8 +104,11 @@ public abstract class WeaponBase : MonoBehaviour
         projectileMove.transform.position = position;
 
         Projectile nailProjectile = projectileMove.GetComponent<Projectile>();
-        nailProjectile.GetComponent<Projectile>().SetDirection(playerMovement.lastHorizontalCoupledVector, 0f);
+        nailProjectile.SetDirection(vectorOfAttack.x, vectorOfAttack.y);
         nailProjectile.SetStats(this);
+
+        //nailProjectile.GetComponent<Projectile>().SetDirection(playerMovement.lastHorizontalCoupledVector, 0f);
+        //nailProjectile.SetStats(this);
 
         return projectileMove;
     }
@@ -115,6 +118,7 @@ public abstract class WeaponBase : MonoBehaviour
         if(attackDirection == DirectionOfAttack.None)
         {
             vectorOfAttack = Vector2.zero;
+            return;
         }
 
         switch (attackDirection)

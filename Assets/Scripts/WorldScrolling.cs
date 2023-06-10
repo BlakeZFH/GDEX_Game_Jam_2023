@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WorldScrolling : MonoBehaviour
 {
-    [SerializeField] Transform playerTransform;
+    Transform playerTransform;
     Vector2Int currentTilePosition = new Vector2Int(0, 0);
     [SerializeField] Vector2Int playerTilePosition;
     Vector2Int onTileGridPlayerPosition;
@@ -26,6 +26,7 @@ public class WorldScrolling : MonoBehaviour
     private void Start()
     {
         UpdateTilesOnScreen();
+        playerTransform = GameManager.instance.playerTransform;
     }
 
     private void Update()
@@ -76,34 +77,34 @@ public class WorldScrolling : MonoBehaviour
         return new Vector3(x * tileSize, y * tileSize, 0f);
     }
 
-    private int CalculatePositionOnAxis(float currenntValue, bool horizontal)
+    private int CalculatePositionOnAxis(float currentValue, bool horizontal)
     {
         if(horizontal)
         {
-            if(currenntValue >= 0)
+            if(currentValue >= 0)
             {
-                currenntValue = currenntValue % terrainTileHorizontalCount;
+                currentValue = currentValue % terrainTileHorizontalCount;
             }
             else
             {
-                currenntValue += 1;
-                currenntValue = terrainTileHorizontalCount - 1 + currenntValue % terrainTileHorizontalCount;
+                currentValue += 1;
+                currentValue = terrainTileHorizontalCount - 1 + currentValue % terrainTileHorizontalCount;
             }
         }
         else
         {
-            if (currenntValue >= 0)
+            if (currentValue >= 0)
             {
-                currenntValue = currenntValue % terrainTileVerticalCount;
+                currentValue = currentValue % terrainTileVerticalCount;
             }
             else
             {
-                currenntValue += 1;
-                currenntValue = terrainTileVerticalCount - 1 + currenntValue % terrainTileVerticalCount;
+                currentValue += 1;
+                currentValue = terrainTileVerticalCount - 1 + currentValue % terrainTileVerticalCount;
             }
         }
 
-        return (int)currenntValue;
+        return (int)currentValue;
     }
 
     public void Add(GameObject tileGameObject, Vector2Int tilePosition)

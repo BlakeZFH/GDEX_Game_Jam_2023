@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d10634e204e6ef4f9c730471b9b848e, type: 3}
   m_Name: Garlic
   m_EditorClassIdentifier: 
-  Name: Garlic
+  Name: Fertilizer
   stats:
     damage: 1
     timeToAttack: 1

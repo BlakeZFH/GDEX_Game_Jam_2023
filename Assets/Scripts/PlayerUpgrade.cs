@@ -30,6 +30,7 @@ public class PlayerUpgrade : MonoBehaviour
             UpdateElement();
         }
     }
+
     void UpdateElement()
     {
         PlayerUpgrades playerUpgrade = dataContainer.upgrades[(int)upgrade];

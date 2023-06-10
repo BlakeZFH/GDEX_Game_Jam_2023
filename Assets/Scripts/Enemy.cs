@@ -35,18 +35,28 @@ public class Enemy : MonoBehaviour, IDamagable
     Rigidbody2D rb;
 
     public EnemyStats stats;
+    [SerializeField] EnemyData enemyData;
 
+    float stunned;
     Vector3 knockbackVector;
     float knockbackForce;
     float knockbackTimeWeight;
-
-    float stunned;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
+/*
+    private void Start()
+    {
+        if(enemyData != null)
+        {
+            InitSprite(enemyData.animatedPrefab);
+            SetStats(enemyData.stats);
+            SetTarget(GameManager.instance.playerTransform.gameObject);
+        }
+    }
+*/
     public void SetTarget(GameObject target)
     {
         //Sets target to player
@@ -121,13 +131,22 @@ public class Enemy : MonoBehaviour, IDamagable
     {
         stats.hp -= damage;
 
-        if(stats.hp <= 0)
+        if(stats.hp < 1)
         {
             targetGameObject.GetComponent<Level>().AddExperience(stats.experience_reward);
             GetComponent<DropOnDestroy>().CheckDrop();
             Destroy(gameObject);
         }
     }
+
+    /*
+    internal void InitSprite(GameObject animatedPrefab)
+    {
+        GameObject spriteObject = Instantiate(animatedPrefab);
+        spriteObject.transform.parent = transform;
+        spriteObject.transform.localPosition = Vector3.zero;
+    }
+    */
 
     public void Stun(float stun)
     {

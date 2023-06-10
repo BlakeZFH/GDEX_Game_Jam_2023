@@ -49,6 +49,7 @@ public class EnemiesManager : MonoBehaviour
     {
         player = GameManager.instance.playerTransform.gameObject;
         bossHealthBar = FindObjectOfType<BossHPBar>(true).GetComponent<Slider>();
+        stageProgress = FindAnyObjectByType<StageProgress>();
     }
 
     private void Update()

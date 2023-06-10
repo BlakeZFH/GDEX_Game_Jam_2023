@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
     [HideInInspector]
-    public Vector3 movement;
+    public Vector3 movementVector;
     [HideInInspector]
     public float lastHorizontalDeCoupledVector;
     [HideInInspector]
@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        movement = new Vector3();
+        movementVector = new Vector3();
         animate = GetComponent<Animate>();
     }
 
@@ -36,33 +36,33 @@ public class PlayerMovement : MonoBehaviour
         lastVerticalDeCoupledVector = 1f;
 
         lastHorizontalCoupledVector = -1f;
-        lastVerticalCoupledVector = -1f;
+        lastVerticalCoupledVector = 1f;
     }
 
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        movementVector.x = Input.GetAxisRaw("Horizontal");
+        movementVector.y = Input.GetAxisRaw("Vertical");
 
-        if(movement.x != 0 || movement.y != 0)
+        if(movementVector.x != 0 || movementVector.y != 0)
         {
-            lastHorizontalCoupledVector = movement.x;
-            lastVerticalCoupledVector = movement.y;
+            lastHorizontalCoupledVector = movementVector.x;
+            lastVerticalCoupledVector = movementVector.y;
         }
 
-        if (movement.x != 0)
+        if (movementVector.x != 0)
         {
-            lastHorizontalDeCoupledVector = movement.x;
+            lastHorizontalDeCoupledVector = movementVector.x;
         }
-        if(movement.y != 0)
+        if(movementVector.y != 0)
         {
-            lastVerticalDeCoupledVector = movement.y;
+            lastVerticalDeCoupledVector = movementVector.y;
         }
 
-        animate.horizontal = movement.x;
+        animate.horizontal = movementVector.x;
 
-        movement *= speed;
+        movementVector *= speed;
 
-        rb.velocity = movement;
+        rb.velocity = movementVector;
     }
 }

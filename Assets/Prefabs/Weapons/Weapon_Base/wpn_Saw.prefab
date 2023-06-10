@@ -219,8 +219,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5897360039854652222}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.010999962, z: 0.35590595}
-  m_LocalScale: {x: 0.26661494, y: 0.26661494, z: 0.26661494}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4355075213467502013}
@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9e2ee2159c11fe42906ce75d25fcd2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 0}
   weaponData: {fileID: 11400000, guid: 7093322fce70cde4d99496a80b568a3d, type: 2}
   weaponStats:
     damage: 1
@@ -251,5 +252,5 @@ MonoBehaviour:
     stun: 0
     knockbackTimeWeight: 0
   vectorOfAttack: {x: 0, y: 0}
-  attackDirection: 0
-  nailPrefab: {fileID: 5362613304548248714, guid: 6115d43eb6a70dd4da3dafcde80f9cef, type: 3}
+  attackDirection: 3
+  nailPrefab: {fileID: 5362613304548248714, guid: 79f95b20a7d2b62428cf1cc72070c0d3, type: 3}

@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Nails
   stats:
-    damage: 1
-    timeToAttack: 1
+    damage: 3
+    timeToAttack: 2
     numberOfAttacks: 1
     knockBack: 0
-    numberOfHits: 0
+    numberOfHits: 1
     projectileSpeed: 8
     stun: 0
     knockbackTimeWeight: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeType: 0
   Name: 'Whip: Rate of Fire'
   description: Snap the whip faster!
-  icon: {fileID: 21300000, guid: 538a95634c0883a4682cc06049654b6f, type: 3}
+  icon: {fileID: 21300000, guid: e484dcf7ca7b48948804ee13895c9901, type: 3}
   weaponData: {fileID: 11400000, guid: 03ee4bef875ef49488e138b990ff9eff, type: 2}
   weaponUpgradeStats:
     damage: 0

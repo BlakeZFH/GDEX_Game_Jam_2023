@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour
         if (dir_x < 0)
         {
             Vector3 scale = transform.localScale;
-            scale.z = scale.z * -1;
+            scale.x = scale.x * -1;
             transform.localScale = scale;
         }
     }
@@ -69,12 +69,11 @@ public class Projectile : MonoBehaviour
             }
             else
             { break; }
-
+        }
             if (numOfHits <= 0)
             {
                 Destroy(gameObject);
             }
-        }
     }
 
     private bool CheckRepeatHit(IDamagable enemy)
@@ -104,5 +103,10 @@ public class Projectile : MonoBehaviour
         speed = weaponBase.weaponStats.projectileSpeed;
         damage = weaponBase.GetDamage();
         numOfHits = weaponBase.weaponStats.numberOfHits;
+    }
+
+    private void OnEnable()
+    {
+        ttl = 6f;
     }
 }

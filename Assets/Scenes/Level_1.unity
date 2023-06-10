@@ -2815,8 +2815,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6896,7 +6896,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2990f74c0fd0e3240868fc695ea59f02, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7893,7 +7893,7 @@ MonoBehaviour:
   stageProgress: {fileID: 2119495973}
   enemy: {fileID: 3764025069340175506, guid: b5207ef665b0ef54d9f1d0e8f335fe02, type: 3}
   bossEnemy: {fileID: 3764025069340175506, guid: 1033db4760e276a4b88601a562e44b46, type: 3}
-  spawnArea: {x: 10, y: 10}
+  spawnArea: {x: 15, y: 8}
   spawnTimer: 2
   bossHealthBar: {fileID: 1388937232}
 --- !u!4 &1261684581
@@ -9835,12 +9835,12 @@ GameObject:
   - component: {fileID: 1616722432}
   - component: {fileID: 1616722433}
   - component: {fileID: 1616722434}
+  - component: {fileID: 1616722440}
   - component: {fileID: 1616722435}
   - component: {fileID: 1616722436}
   - component: {fileID: 1616722437}
-  - component: {fileID: 1616722438}
   - component: {fileID: 1616722439}
-  - component: {fileID: 1616722440}
+  - component: {fileID: 1616722438}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -9860,7 +9860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dadc2ed28f917b4a8692a25cad1efb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {x: 0, y: 0, z: 0}
+  movementVector: {x: 0, y: 0, z: 0}
   lastHorizontalDeCoupledVector: 0
   lastVerticalDeCoupledVector: 0
   lastHorizontalCoupledVector: 0
@@ -10004,12 +10004,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experienceBar: {fileID: 792088745}
-  upgradeMenuManager: {fileID: 489595720}
+  upgradeMenu: {fileID: 489595720}
   upgrades:
   - {fileID: 11400000, guid: 75043bfe2d8c55f4880dd73606cb461e, type: 2}
   - {fileID: 11400000, guid: dd145ebf29e457440be208249ae05306, type: 2}
   - {fileID: 11400000, guid: fefcab9746d0ba745993b7711d3ada37, type: 2}
   - {fileID: 11400000, guid: bf4008dfd390b644794082b13ea05e60, type: 2}
+  acquiredUpgrades: []
   upgradesAvailableOnStart: []
   levelUpSFX: {fileID: 1616722440}
 --- !u!114 &1616722435
@@ -12375,7 +12376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb68176fc424344b8d1039ab0ac09e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 1616722430}
   playerTilePosition: {x: 1, y: 1}
   tileSize: 20
   terrainTileHorizontalCount: 3
@@ -12432,7 +12432,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageData: {fileID: 11400000, guid: c52575f416484214d8fe685bedeac413, type: 2}
-  enemiesManager: {fileID: 1261684580}
 --- !u!114 &2119495973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12445,7 +12444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 216259a5d0c216a4dbfcd164f197d56a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressTimeRate: 30
+  progressTimeRate: 20
   progressPerSplit: 0.2
 --- !u!1 &2123786215
 GameObject:

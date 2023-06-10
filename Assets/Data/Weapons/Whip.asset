@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Whip
   stats:
-    damage: 1
+    damage: 5
     timeToAttack: 1.5
     numberOfAttacks: 1
     knockBack: 0

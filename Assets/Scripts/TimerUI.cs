@@ -6,7 +6,6 @@ using TMPro;
 public class TimerUI : MonoBehaviour
 {
     TextMeshProUGUI text;
-    GameOver gameOver;
 
     private void Awake()
     {

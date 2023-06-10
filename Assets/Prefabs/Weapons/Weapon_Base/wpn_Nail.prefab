@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 769bf3061fd243d4eb1b071b429f239d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 0}
   weaponData: {fileID: 11400000, guid: 8d1bb68db0cc0634d94a5958bfcd7b9a, type: 2}
   weaponStats:
     damage: 0
@@ -56,7 +57,7 @@ MonoBehaviour:
     stun: 0
     knockbackTimeWeight: 0
   vectorOfAttack: {x: 0, y: 0}
-  attackDirection: 0
+  attackDirection: 2
   nailPrefab: {fileID: 5362613304548248714, guid: 79f95b20a7d2b62428cf1cc72070c0d3, type: 3}
   spread: 0.5
 --- !u!82 &331875067780678387

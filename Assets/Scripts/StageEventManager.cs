@@ -5,11 +5,11 @@ using UnityEngine;
 public class StageEventManager : MonoBehaviour
 {
     [SerializeField] StageData stageData;
-    [SerializeField] EnemiesManager enemiesManager;
+    EnemiesManager enemiesManager;
 
     StageTime stageTime;
     int eventIndexer;
-    PlayerWinManager playerWinManager;
+    PlayerWinManager playerWin;
 
     private void Awake()
     {
@@ -18,7 +18,8 @@ public class StageEventManager : MonoBehaviour
 
     private void Start()
     {
-        playerWinManager = FindAnyObjectByType<PlayerWinManager>();
+        playerWin = FindAnyObjectByType<PlayerWinManager>();
+        enemiesManager = FindAnyObjectByType<EnemiesManager>();
     }
 
     private void Update()
@@ -53,7 +54,7 @@ public class StageEventManager : MonoBehaviour
 
     private void WinStage()
     {
-        playerWinManager.Win();
+        playerWin.Win();
     }
 
     private void SpawnObject()

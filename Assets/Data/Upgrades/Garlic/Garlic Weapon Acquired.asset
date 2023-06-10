@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Garlic Weapon Acquired
   m_EditorClassIdentifier: 
   upgradeType: 2
-  Name: Garlic
-  description: Creates an area around you that damages enemies
+  Name: Fertilizer
+  description: Fertilize yourself to peel the paint off of nearby enemies with your
+    stench
   icon: {fileID: -552042484, guid: 8cd5176d3cd64e443b4ceba4ed9b33c9, type: 3}
   weaponData: {fileID: 11400000, guid: 1048119f175c1c24dab479dacf2b6660, type: 2}
   weaponUpgradeStats:

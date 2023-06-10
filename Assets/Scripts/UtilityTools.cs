@@ -10,7 +10,7 @@ public class UtilityTools
         //Prevents enemies from spawning too far away or within player's FOV
         Vector3 position = new Vector3();
 
-        float f = UnityEngine.Random.value > 0.5f ? 1f : 1f;
+        float f = UnityEngine.Random.value > 0.5f ? -1f : 1f;
         if (UnityEngine.Random.value > 0.5f)
         {
             position.x = UnityEngine.Random.Range(-spawnArea.x, spawnArea.x);

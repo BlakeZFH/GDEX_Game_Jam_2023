@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class DamageMessage : MonoBehaviour
 {
-    [SerializeField] float timeToLeave = 0.5f;
+    [SerializeField] float timeToLive = 0.5f;
     float ttl = 0.5f;
 
     private void OnEnable()
     {
-        ttl = timeToLeave;
+        ttl = timeToLive;
     }
 
     private void Update()

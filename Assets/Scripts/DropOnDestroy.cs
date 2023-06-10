@@ -22,6 +22,7 @@ public class DropOnDestroy : MonoBehaviour
         if(dropItemPrefab.Count <= 0)
         {
             Debug.LogWarning("List of drop items is empty");
+            return;
         }
 
         //Drops object on parent destroy

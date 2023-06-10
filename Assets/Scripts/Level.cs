@@ -7,12 +7,12 @@ public class Level : MonoBehaviour
     int level = 1;
     int experience = 0;
     [SerializeField] ExperienceBar experienceBar;
-
-    [SerializeField] UpgradeMenuManager upgradeMenuManager;
+    [SerializeField] UpgradeMenuManager upgradeMenu;
 
     [SerializeField] List<UpgradeData> upgrades;
     List<UpgradeData> selectedUpgrades;
-    List<UpgradeData> acquiredUpgrades;
+
+    [SerializeField] List<UpgradeData> acquiredUpgrades;
 
     WeaponManager weaponManager;
     PassiveItems passiveItems;
@@ -27,12 +27,6 @@ public class Level : MonoBehaviour
         passiveItems = GetComponent<PassiveItems>();
     }
 
-    internal void AddUpgradesIntoTheListOfAvailableUpgrades(List<UpgradeData> upgradesToAdd)
-    {
-        if (upgradesToAdd == null) { return; }
-        this.upgrades.AddRange(upgradesToAdd);
-    }
-
     //Defines xp needed to level up
     int TO_LEVEL_UP
     {
@@ -41,6 +35,12 @@ public class Level : MonoBehaviour
             return level * 1000;
         }
 
+    }
+
+    internal void AddUpgradesIntoTheListOfAvailableUpgrades(List<UpgradeData> upgradesToAdd)
+    {
+        if (upgradesToAdd == null) { return; }
+        this.upgrades.AddRange(upgradesToAdd);
     }
 
     private void Start()
@@ -107,7 +107,7 @@ public class Level : MonoBehaviour
 
         levelUpSFX.Play();
 
-        upgradeMenuManager.OpenMenu(selectedUpgrades);
+        upgradeMenu.OpenMenu(selectedUpgrades);
         experience -= TO_LEVEL_UP;
         level += 1;
         experienceBar.SetLevelText(level);
@@ -119,6 +119,7 @@ public class Level : MonoBehaviour
         {
             int x = Random.Range(0, i + 1);
             UpgradeData shuffleElement = upgrades[i];
+            upgrades[i] = upgrades[x];
             upgrades[x] = shuffleElement;
         }
     }
