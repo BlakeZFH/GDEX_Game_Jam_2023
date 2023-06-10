@@ -19,6 +19,8 @@ public class Level : MonoBehaviour
 
     [SerializeField] List<UpgradeData> upgradesAvailableOnStart;
 
+    [SerializeField] private AudioSource levelUpSFX;
+
     private void Awake()
     {
         weaponManager = GetComponent<WeaponManager>();
@@ -46,6 +48,7 @@ public class Level : MonoBehaviour
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
         experienceBar.SetLevelText(level);
         AddUpgradesIntoTheListOfAvailableUpgrades(upgradesAvailableOnStart);
+        levelUpSFX = GetComponent<AudioSource>();
     }
 
     public void AddExperience(int amount)
@@ -101,6 +104,8 @@ public class Level : MonoBehaviour
         if (selectedUpgrades == null) { selectedUpgrades = new List<UpgradeData>(); }
         selectedUpgrades.Clear();
         selectedUpgrades.AddRange(GetUpgrade(4));
+
+        levelUpSFX.Play();
 
         upgradeMenuManager.OpenMenu(selectedUpgrades);
         experience -= TO_LEVEL_UP;

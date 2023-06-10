@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: BossDoor
   animatedPrefab: {fileID: 1398991323740303328, guid: 48ec1d2ef6e72634691cff5810f291ca, type: 3}
   stats:
-    hp: 100
-    damage: 20
-    experience_reward: 1000
-    moveSpeed: 1
+    hp: 1000
+    damage: 50
+    experience_reward: 800
+    moveSpeed: 1.5

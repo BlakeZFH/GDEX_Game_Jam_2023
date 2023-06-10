@@ -32,6 +32,7 @@ public class EnemiesManager : MonoBehaviour
 {
     [SerializeField] StageProgress stageProgress;
     [SerializeField] GameObject enemy;
+    [SerializeField] GameObject bossEnemy;
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
     GameObject player;
@@ -138,8 +139,18 @@ public class EnemiesManager : MonoBehaviour
 
         position += player.transform.position;
 
+        GameObject newEnemy;
+
+        if (isBoss)
+        {
+            newEnemy = Instantiate(bossEnemy);
+        }
+        else
+        {
+            newEnemy = Instantiate(enemy);
+        }
+
         //Spawning main enemy object
-        GameObject newEnemy = Instantiate(enemy);
         newEnemy.transform.position = position;
 
         Enemy newEnemyComponent = newEnemy.GetComponent<Enemy>();

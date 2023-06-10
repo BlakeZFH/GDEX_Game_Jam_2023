@@ -18,22 +18,67 @@ MonoBehaviour:
     message: Wave 1
     enemyToSpawn: {fileID: 11400000, guid: 38da8132f57223342b7eaaa6b4e43824, type: 2}
     objectToSpawn: {fileID: 0}
-    count: 10
+    count: 5
     isRepeatedEvent: 1
-    repeatEverySeconds: 10
-    repeatCount: 10
+    repeatEverySeconds: 5
+    repeatCount: 89
   - eventType: 0
-    time: 15
-    message: Wave 2
+    time: 10
+    message: Wave 1
     enemyToSpawn: {fileID: 11400000, guid: 954351c56ed52c04da010041cc78a750, type: 2}
     objectToSpawn: {fileID: 0}
-    count: 10
+    count: 3
+    isRepeatedEvent: 1
+    repeatEverySeconds: 5
+    repeatCount: 89
+  - eventType: 0
+    time: 60
+    message: Wave 2
+    enemyToSpawn: {fileID: 11400000, guid: 976b2f83f233fbd4186172b2c2d2dd89, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 8
+    isRepeatedEvent: 1
+    repeatEverySeconds: 30
+    repeatCount: 22
+  - eventType: 0
+    time: 120
+    message: Glass Wave
+    enemyToSpawn: {fileID: 11400000, guid: 1bcb4d855306f9b4aa9894b8b8dad24c, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 5
+    isRepeatedEvent: 1
+    repeatEverySeconds: 10
+    repeatCount: 84
+  - eventType: 0
+    time: 240
+    message: Wave 3
+    enemyToSpawn: {fileID: 11400000, guid: 93294761fcc3b344a8b1730b7f39ceb4, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 5
+    isRepeatedEvent: 1
+    repeatEverySeconds: 20
+    repeatCount: 38
+  - eventType: 0
+    time: 360
+    message: Wave 4
+    enemyToSpawn: {fileID: 11400000, guid: db8b94e73f0dfd84c95dbed32503cdde, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 6
+    isRepeatedEvent: 1
+    repeatEverySeconds: 30
+    repeatCount: 20
+  - eventType: 1
+    time: 660
+    message: Care Package
+    enemyToSpawn: {fileID: 0}
+    objectToSpawn: {fileID: 3045856592856937817, guid: a0b823b2e38041d4d92ffaeb06d38aae, type: 3}
+    count: 5
     isRepeatedEvent: 0
     repeatEverySeconds: 0
     repeatCount: 0
   - eventType: 3
-    time: 15
-    message: BOSS
+    time: 720
+    message: BIG BOSS
     enemyToSpawn: {fileID: 11400000, guid: 5714a7269a066a044a099e67112e842a, type: 2}
     objectToSpawn: {fileID: 0}
     count: 1
@@ -41,7 +86,7 @@ MonoBehaviour:
     repeatEverySeconds: 0
     repeatCount: 0
   - eventType: 2
-    time: 60
+    time: 900
     message: You won!
     enemyToSpawn: {fileID: 0}
     objectToSpawn: {fileID: 0}

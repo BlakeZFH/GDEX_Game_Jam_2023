@@ -17,5 +17,12 @@ MonoBehaviour:
     damage: 1
     timeToAttack: 1
     numberOfAttacks: 1
+    knockBack: 0
+    numberOfHits: 0
+    projectileSpeed: 0
+    stun: 0
+    knockbackTimeWeight: 0
   weaponBasePrefab: {fileID: 564315334022614931, guid: a4b3202481c1f7046b2c9577e775d316, type: 3}
-  upgrades: []
+  upgrades:
+  - {fileID: 11400000, guid: 5c371f7d86e6b0c43a192e7db22aa636, type: 2}
+  - {fileID: 11400000, guid: 36ca00c687713b244811606aa06ef548, type: 2}

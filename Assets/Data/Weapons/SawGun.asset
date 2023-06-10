@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d10634e204e6ef4f9c730471b9b848e, type: 3}
+  m_Name: SawGun
+  m_EditorClassIdentifier: 
+  Name: Saw Gun
+  stats:
+    damage: 1
+    timeToAttack: 2
+    numberOfAttacks: 1
+    knockBack: 0
+    numberOfHits: 0
+    projectileSpeed: 8
+    stun: 0
+    knockbackTimeWeight: 0
+  weaponBasePrefab: {fileID: 0}
+  upgrades:
+  - {fileID: 11400000, guid: ff6f9819869b9fd449873ddcedf9c1fb, type: 2}
+  - {fileID: 11400000, guid: c89ba25a25633494b9e66cc10b8f4b4a, type: 2}
+  - {fileID: 11400000, guid: 589c226f0eaf0954cb76745b4773e383, type: 2}
+  - {fileID: 11400000, guid: e57bd0585343e054296d8b1429bad72a, type: 2}
+  - {fileID: 11400000, guid: 874d50649d6ec094f87043ae1c8e8bc2, type: 2}
+  - {fileID: 11400000, guid: fefcab9746d0ba745993b7711d3ada37, type: 2}

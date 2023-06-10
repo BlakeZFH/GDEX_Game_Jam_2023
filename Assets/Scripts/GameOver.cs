@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class GameOver : MonoBehaviour
 {
+    [SerializeField] private AudioSource gameOverSFX;
     public GameObject gameOverPanel;
     [SerializeField] GameObject weaponParent;
-    PauseManager pauseManager;
+
+    private void Start()
+    {
+        gameOverSFX = GetComponent<AudioSource>();
+    }
 
     public void PlayerGameOver()
     {
+        gameOverSFX.Play();
         GetComponent<PlayerMovement>().enabled = false;
         gameOverPanel.SetActive(true);
         weaponParent.SetActive(false);

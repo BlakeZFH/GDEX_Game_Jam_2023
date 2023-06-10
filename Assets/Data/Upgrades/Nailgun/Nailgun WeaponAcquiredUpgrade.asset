@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeType: 2
   Name: Nailgun
   description: A weapon that shoots nails
-  icon: {fileID: 21300000, guid: c441f8046a5eabf4489696adb30a019b, type: 3}
+  icon: {fileID: 21300000, guid: f87f8eb72a9e1cf4aa18407c7323b461, type: 3}
   weaponData: {fileID: 11400000, guid: 8d1bb68db0cc0634d94a5958bfcd7b9a, type: 2}
   weaponUpgradeStats:
     damage: 0
