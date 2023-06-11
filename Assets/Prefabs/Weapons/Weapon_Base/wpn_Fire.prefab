@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8665076178415726567}
   - component: {fileID: 331875067780678387}
   m_Layer: 0
-  m_Name: wpn_Saw
+  m_Name: wpn_Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ MonoBehaviour:
     knockbackTimeWeight: 0
   vectorOfAttack: {x: 0, y: 0}
   attackDirection: 1
-  nailPrefab: {fileID: 5362613304548248714, guid: 6115d43eb6a70dd4da3dafcde80f9cef, type: 3}
+  nailPrefab: {fileID: 5362613304548248714, guid: 3ac311802fc97be43bc40f514acd1cb3, type: 3}
   spread: 0.5
 --- !u!82 &331875067780678387
 AudioSource:

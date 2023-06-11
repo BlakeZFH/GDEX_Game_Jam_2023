@@ -31,15 +31,6 @@ MonoBehaviour:
     isRepeatedEvent: 1
     repeatEverySeconds: 5
     repeatCount: 89
-  - eventType: 3
-    time: 11
-    message: BIG BOSS
-    enemyToSpawn: {fileID: 11400000, guid: 5714a7269a066a044a099e67112e842a, type: 2}
-    objectToSpawn: {fileID: 0}
-    count: 1
-    isRepeatedEvent: 0
-    repeatEverySeconds: 0
-    repeatCount: 0
   - eventType: 0
     time: 60
     message: Wave 2
@@ -82,6 +73,24 @@ MonoBehaviour:
     enemyToSpawn: {fileID: 0}
     objectToSpawn: {fileID: 3045856592856937817, guid: a0b823b2e38041d4d92ffaeb06d38aae, type: 3}
     count: 5
+    isRepeatedEvent: 0
+    repeatEverySeconds: 0
+    repeatCount: 0
+  - eventType: 3
+    time: 720
+    message: BIG BOSS
+    enemyToSpawn: {fileID: 11400000, guid: 5714a7269a066a044a099e67112e842a, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 1
+    isRepeatedEvent: 0
+    repeatEverySeconds: 0
+    repeatCount: 0
+  - eventType: 0
+    time: 885
+    message: FINAL SURGE
+    enemyToSpawn: {fileID: 11400000, guid: 38da8132f57223342b7eaaa6b4e43824, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 100
     isRepeatedEvent: 0
     repeatEverySeconds: 0
     repeatCount: 0

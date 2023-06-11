@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d10634e204e6ef4f9c730471b9b848e, type: 3}
+  m_Name: Axe
+  m_EditorClassIdentifier: 
+  Name: Axe
+  stats:
+    damage: 3
+    timeToAttack: 2
+    numberOfAttacks: 1
+    knockBack: 0
+    numberOfHits: 1
+    projectileSpeed: 8
+    stun: 0
+    knockbackTimeWeight: 0
+  weaponBasePrefab: {fileID: 3795347121461104250, guid: 048e101e93d458c4e8f8b1126b109c31, type: 3}
+  upgrades:
+  - {fileID: 11400000, guid: cc6f390986c46cf4d8f6d5bb41b17848, type: 2}
+  - {fileID: 11400000, guid: 09779119ba946c647b894582a3e141f5, type: 2}
+  - {fileID: 11400000, guid: 7bb2eea424d69934298ccbbf1add178c, type: 2}
+  - {fileID: 11400000, guid: eb3a2ca062964bb4a95c64187a3b03ff, type: 2}
+  - {fileID: 11400000, guid: 2c49b6383edc4c34bbaf930a38e34bd5, type: 2}
+  - {fileID: 11400000, guid: 404cd5de02796404faf4d5d5f90f937d, type: 2}
