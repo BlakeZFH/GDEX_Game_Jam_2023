@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d10634e204e6ef4f9c730471b9b848e, type: 3}
-  m_Name: Whip
+  m_Name: Petal Slash
   m_EditorClassIdentifier: 
-  Name: Whip
+  Name: Petal Slash
   stats:
-    damage: 5
+    damage: 100
     timeToAttack: 1.5
     numberOfAttacks: 1
     knockBack: 0

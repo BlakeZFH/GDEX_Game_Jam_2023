@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Fertilizer
   stats:
-    damage: 1
+    damage: 25
     timeToAttack: 1
     numberOfAttacks: 1
     knockBack: 0

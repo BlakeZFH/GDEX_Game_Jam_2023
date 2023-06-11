@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: DarkWood Door
   animatedPrefab: {fileID: 1398991323740303328, guid: 3b039935874193844859c611414cb03f, type: 3}
   stats:
-    hp: 20
-    damage: 10
+    hp: 150
+    damage: 4
     experience_reward: 200
-    moveSpeed: 3
+    moveSpeed: 1.4

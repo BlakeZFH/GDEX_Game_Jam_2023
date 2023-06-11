@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Whip Upgrade (Double Strike)
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: 'Whip: Double Strike'
+  Name: 'Petal Slash: Double Strike'
   description: Strike twice!
   icon: {fileID: 21300000, guid: e484dcf7ca7b48948804ee13895c9901, type: 3}
   weaponData: {fileID: 11400000, guid: 03ee4bef875ef49488e138b990ff9eff, type: 2}

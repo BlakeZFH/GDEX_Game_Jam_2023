@@ -125,6 +125,7 @@ MonoBehaviour:
     damage: 5
     experience_reward: 100
     moveSpeed: 2
+  enemyData: {fileID: 0}
 --- !u!114 &4452615661746101085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,7 +141,8 @@ MonoBehaviour:
   dropItemPrefab:
   - {fileID: 419165099823200931, guid: 530e7031a9fe81142b9fa169251f0dc9, type: 3}
   - {fileID: 4118851402924693932, guid: af208ca9ad5a3bb4fbee93dcd33129c5, type: 3}
-  chance: 0.758
+  - {fileID: 3045856592856937817, guid: a0b823b2e38041d4d92ffaeb06d38aae, type: 3}
+  chance: 0.88
 --- !u!114 &4180116847773897607
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ MonoBehaviour:
     knockBack: 0
     numberOfHits: 0
     projectileSpeed: 0
-    stun: 1
+    stun: 2
     knockbackTimeWeight: 0
   item: {fileID: 0}
   itemStats:

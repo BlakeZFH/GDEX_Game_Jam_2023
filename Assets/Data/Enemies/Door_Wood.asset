@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Wood Door
   animatedPrefab: {fileID: 1398991323740303328, guid: c80ffe76a27ad1a489ac4b5e122f1046, type: 3}
   stats:
-    hp: 10
-    damage: 5
+    hp: 75
+    damage: 3
     experience_reward: 100
-    moveSpeed: 2
+    moveSpeed: 1.5

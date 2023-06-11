@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Stone Door
   animatedPrefab: {fileID: 1398991323740303328, guid: b40e62d1274bab84f8f2cbf105a219b5, type: 3}
   stats:
-    hp: 50
-    damage: 15
+    hp: 250
+    damage: 5
     experience_reward: 200
     moveSpeed: 1.5

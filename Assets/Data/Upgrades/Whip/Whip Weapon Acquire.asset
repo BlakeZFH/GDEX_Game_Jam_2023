@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Whip Weapon Acquire
   m_EditorClassIdentifier: 
   upgradeType: 2
-  Name: Whip
-  description: Oh snap
+  Name: Petal Slash
+  description: Slash those pesky doors with your beautiful petals
   icon: {fileID: 21300000, guid: e484dcf7ca7b48948804ee13895c9901, type: 3}
   weaponData: {fileID: 11400000, guid: 03ee4bef875ef49488e138b990ff9eff, type: 2}
   weaponUpgradeStats:

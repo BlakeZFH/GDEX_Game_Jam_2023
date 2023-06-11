@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 0
   Name: 'Fertilizer: Damage+'
-  description: Increases stink damage by +1
+  description: Increases stink damage by +25
   icon: {fileID: -552042484, guid: 8cd5176d3cd64e443b4ceba4ed9b33c9, type: 3}
   weaponData: {fileID: 11400000, guid: 1048119f175c1c24dab479dacf2b6660, type: 2}
   weaponUpgradeStats:
-    damage: 1
+    damage: 25
     timeToAttack: 0
     numberOfAttacks: 0
     knockBack: 0

@@ -18,8 +18,8 @@ MonoBehaviour:
   - persistantUpgrades: 0
     level: 0
     max_level: 10
-    costToUpgrade: 50
+    costToUpgrade: 10
   - persistantUpgrades: 1
     level: 0
     max_level: 10
-    costToUpgrade: 50
+    costToUpgrade: 10

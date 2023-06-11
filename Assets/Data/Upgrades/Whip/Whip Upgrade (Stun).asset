@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Whip Upgrade (Stun)
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: 'Whip: Stun'
+  Name: 'Petal Slash: Stun'
   description: Stuns doors for a short duration
   icon: {fileID: 21300000, guid: e484dcf7ca7b48948804ee13895c9901, type: 3}
   weaponData: {fileID: 11400000, guid: 03ee4bef875ef49488e138b990ff9eff, type: 2}
@@ -24,7 +24,7 @@ MonoBehaviour:
     knockBack: 0
     numberOfHits: 0
     projectileSpeed: 0
-    stun: 1
+    stun: 2
     knockbackTimeWeight: 0
   item: {fileID: 0}
   itemStats:

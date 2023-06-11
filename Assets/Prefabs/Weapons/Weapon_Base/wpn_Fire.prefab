@@ -60,6 +60,7 @@ MonoBehaviour:
   attackDirection: 1
   nailPrefab: {fileID: 5362613304548248714, guid: 3ac311802fc97be43bc40f514acd1cb3, type: 3}
   spread: 0.5
+  attackSFX: {fileID: 331875067780678387}
 --- !u!82 &331875067780678387
 AudioSource:
   m_ObjectHideFlags: 0
@@ -72,7 +73,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2ebf2421dddc15a45b7fc6ae8197b1c0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0

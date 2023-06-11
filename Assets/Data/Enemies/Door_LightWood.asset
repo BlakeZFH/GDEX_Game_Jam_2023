@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Lightwood Door
   animatedPrefab: {fileID: 1398991323740303328, guid: b73a683731fe619458b6bf391c5d0b52, type: 3}
   stats:
-    hp: 20
-    damage: 10
+    hp: 100
+    damage: 3
     experience_reward: 150
-    moveSpeed: 2
+    moveSpeed: 1.7

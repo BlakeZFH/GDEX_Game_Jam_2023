@@ -21,7 +21,7 @@ MonoBehaviour:
     damage: 0
     timeToAttack: 0
     numberOfAttacks: 0
-    knockBack: 2
+    knockBack: 3
     numberOfHits: 0
     projectileSpeed: 0
     stun: 0

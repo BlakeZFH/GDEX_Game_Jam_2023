@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Saw
   stats:
-    damage: 3
+    damage: 100
     timeToAttack: 2
     numberOfAttacks: 1
     knockBack: 0

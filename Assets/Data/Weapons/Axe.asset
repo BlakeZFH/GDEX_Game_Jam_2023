@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Axe
   stats:
-    damage: 3
-    timeToAttack: 2
+    damage: 150
+    timeToAttack: 1.75
     numberOfAttacks: 1
     knockBack: 0
     numberOfHits: 1
-    projectileSpeed: 8
+    projectileSpeed: 5
     stun: 0
     knockbackTimeWeight: 0
   weaponBasePrefab: {fileID: 3795347121461104250, guid: 048e101e93d458c4e8f8b1126b109c31, type: 3}

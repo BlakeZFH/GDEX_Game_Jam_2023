@@ -7,6 +7,13 @@ public class NailWeapon : WeaponBase
     [SerializeField] GameObject nailPrefab;
     [SerializeField] float spread = 0.5f;
 
+    [SerializeField] AudioSource attackSFX;
+
+    private void Start()
+    {
+        attackSFX = GetComponent<AudioSource>();
+    }
+
     public override void Attack()
     {
         UpdateVectorOfAttack();
@@ -19,6 +26,7 @@ public class NailWeapon : WeaponBase
                 position.y += i * spread; //spreads projectiles
             }
             SpawnProjectile(nailPrefab, position);
+            attackSFX.Play();
         }
     }
 }

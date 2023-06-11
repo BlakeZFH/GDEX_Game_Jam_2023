@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 0
   Name: 'Axe: Damage+'
-  description: Increases axe damage by +1
+  description: Increases axe damage by +150
   icon: {fileID: 682151186, guid: e598d13a600b0f24397d1b3b2fc4d036, type: 3}
   weaponData: {fileID: 11400000, guid: c3095f6b5174b1e46843282146ce1fdf, type: 2}
   weaponUpgradeStats:
-    damage: 1
+    damage: 150
     timeToAttack: 0
     numberOfAttacks: 0
     knockBack: 0

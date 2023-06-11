@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: GlassWood Door
   animatedPrefab: {fileID: 1398991323740303328, guid: 79f3938c619685b40a7334c4595b6e9c, type: 3}
   stats:
-    hp: 5
-    damage: 3
+    hp: 50
+    damage: 2
     experience_reward: 50
-    moveSpeed: 4
+    moveSpeed: 3.5
